@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "postinstall": "npx mrm@2 lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
@@ -16,9 +15,7 @@
   "devDependencies": {
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
+    "micromatch": "^4.0.4",
     "prettier": "^2.3.0"
-  },
-  "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
   }
 }
