@@ -1,0 +1,6 @@
+
+*.ico
+.prettierignore
+.gitignore
+.gitkeep
+.gitattributes
