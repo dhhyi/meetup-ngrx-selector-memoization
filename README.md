@@ -24,3 +24,38 @@ Because of his original background in server-side development, he likes to dig d
 
 - https://angular.schule/blog/2020-01-ngrx-data-views
 - https://dev.to/zackderose/ngrx-fun-with-createselectorfactory-hng
+
+## Outline
+
+### Fundamentals
+
+- Tasks of selectors in an application
+
+  - prepare data from store for view
+  - adapt format
+  - trigger changes when data changes
+    -> OnPush change detection
+
+- anatomy of a selector
+
+  - basically just a `map` function
+  -
+
+- What is Memoization
+
+  - basically a cache
+
+- How does Memoization work with NgRx Selectors by default
+  - check if input is identical (via provided function)
+    - return cache if it is
+  - calculate projector output
+  - new value: compare with cache (via provided function)
+    - return new if differs
+    - return cache if same
+
+### Problems
+
+- selectors (and OnPush change detection) require immutability
+
+- projector creates new output that semantically doesn't change
+  - "same" array returned on `filter`
