@@ -1,0 +1,161 @@
+body {
+  font-family: "Droid Serif";
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Yanone Kaffeesatz";
+  font-weight: normal;
+}
+
+.remark-code,
+.remark-inline-code {
+  font-family: "Ubuntu Mono";
+  font-size: x-large;
+}
+
+.remark-code-line-highlighted {
+  background-color: rgb(136 136 82 / 46%);
+}
+
+.remark-slide-content {
+  background: rgb(129, 129, 129);
+  background: linear-gradient(
+    130deg,
+    rgba(129, 129, 129, 1) 0%,
+    rgba(214, 214, 223, 1) 13%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.white {
+  background-color: white !important;
+  background: unset;
+}
+
+.big p,
+.big li,
+.big remark-inline-code {
+  font-size: xx-large;
+}
+
+.large p,
+.large li,
+.large remark-inline-code {
+  font-size: x-large;
+}
+
+.left-heading h1 {
+  text-align: left !important;
+}
+
+.clean .remark-slide-number {
+  display: none;
+}
+
+.avartar > img {
+  border-radius: 50%;
+  float: right;
+}
+
+.meetup-logo img {
+  width: 10%;
+  display: inline;
+  padding-right: 10px;
+}
+.meetup-logo p {
+  display: inline;
+  vertical-align: middle;
+}
+.meetup-logo h2 {
+  display: inline;
+  vertical-align: middle;
+}
+
+.icon img {
+  height: 1.2em;
+  vertical-align: middle;
+}
+.company-icon img {
+  height: 1.2em;
+  vertical-align: bottom;
+  background-color: black;
+  padding: 2px;
+}
+h2 .icon img {
+  height: 0.8em;
+  vertical-align: middle;
+}
+
+a,
+a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.icon a,
+.icon a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.w50 img {
+  width: 49%;
+}
+
+.fit img {
+  height: 500px;
+}
+
+// https://stackoverflow.com/a/43806724/13001898
+.img-overlay-wrap {
+  position: relative;
+  display: inline-block; /* <= shrinks container to image size */
+  transition: transform 150ms ease-in-out;
+}
+.img-overlay-wrap img {
+  /* <= optional, for responsiveness */
+  display: block;
+  height: 500px;
+}
+.img-overlay-wrap svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+.left-column h2:last-of-type,
+.left-column h3:last-child {
+  color: #000;
+}
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+
+blockquote p {
+  width: 70%;
+  font-style: italic;
+  position: relative;
+  left: 50px;
+}
+blockquote:before {
+  display: block;
+  position: relative;
+  top: 60px;
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
