@@ -5,7 +5,8 @@
   "scripts": {
     "prepare": "husky install",
     "talk": "http-server -c-1 talk",
-    "talk:watch": "cd talk && remarker serve"
+    "talk:watch": "cd talk && remarker serve",
+    "app:serve": "cd example-app && ng serve"
   },
   "author": "Danilo Hoffmann",
   "license": "MIT",
