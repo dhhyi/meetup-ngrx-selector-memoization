@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Observable, interval, Subject } from "rxjs";
+import { Component, OnDestroy } from "@angular/core";
+import { interval, Subject } from "rxjs";
 import { map, takeUntil, takeWhile } from "rxjs/operators";
 import { fibonacciPerf, FibonacciReturnType } from "../utils";
 

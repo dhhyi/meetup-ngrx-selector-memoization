@@ -9,8 +9,6 @@ import {
   createFeatureSelector,
   createReducer,
   createSelector,
-  createSelectorFactory,
-  defaultMemoize,
   on,
   props,
 } from "@ngrx/store";
