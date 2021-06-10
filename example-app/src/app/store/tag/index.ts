@@ -11,6 +11,7 @@ import { Tag } from "./tag.model";
 export * from "./tag.model";
 
 export const upsertTag = createAction("[Tag] Update", props<{ tag: Tag }>());
+
 export interface TagState extends EntityState<Tag> {}
 
 const tagAdapter: EntityAdapter<Tag> = createEntityAdapter<Tag>();

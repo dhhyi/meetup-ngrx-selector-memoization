@@ -14,6 +14,9 @@
     <button mat-button (click)="updateTag('ng8')">Angular 8</button>
     <button mat-button (click)="updateTag('se')">Software Engineering</button>
     <button mat-button (click)="updateTag('ph')">Philosophy</button>
+    <button mat-raised-button (click)="addRandomTagToBook()">
+      Add Random Tag to Book
+    </button>
   </p>
 
   <div *ngFor="let bookStream of books" class="book-card">

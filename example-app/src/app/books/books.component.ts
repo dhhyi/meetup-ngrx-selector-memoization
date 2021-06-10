@@ -3,9 +3,9 @@ import { Store, select } from "@ngrx/store";
 import { Observable, merge, of, timer } from "rxjs";
 import { switchMap, mapTo } from "rxjs/operators";
 import { authorDemoData, upsertAuthor } from "../store/author";
-import { bookDemoData, upsertBook } from "../store/book";
+import { addTagToBook, Book, bookDemoData, upsertBook } from "../store/book";
 import { BookView, getBookView } from "../store/book-view";
-import { tagDemoData, upsertTag } from "../store/tag";
+import { Tag, tagDemoData, upsertTag } from "../store/tag";
 
 interface BookViewWithLoading {
   book$: Observable<BookView | undefined>;
@@ -53,5 +53,14 @@ export class BooksComponent implements OnInit {
   updateTag(tagId: string): void {
     const tag = tagDemoData.find((a) => a.id === tagId);
     if (tag) this.store.dispatch(upsertTag({ tag }));
+  }
+
+  addRandomTagToBook() {
+    const random = (Math.random() * 1000).toFixed(0);
+    const tag: Tag = { id: random, name: random };
+    this.store.dispatch(upsertTag({ tag }));
+    let index = Math.floor(Math.random() * bookDemoData.length);
+    const book = bookDemoData.find((_, i) => i == index) as Book;
+    this.store.dispatch(addTagToBook({ bookId: book.id, tagId: tag.id }));
   }
 }

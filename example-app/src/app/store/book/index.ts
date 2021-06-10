@@ -22,6 +22,12 @@ export const upsertBook = createAction(
   "[Book] Update",
   props<{ book: Book }>()
 );
+
+export const addTagToBook = createAction(
+  "[Book] Add Tag",
+  props<{ bookId: string; tagId: string }>()
+);
+
 export interface BookState extends EntityState<Book> {}
 
 const bookAdapter: EntityAdapter<Book> = createEntityAdapter<Book>();
@@ -30,7 +36,12 @@ const initialBookState: BookState = bookAdapter.getInitialState();
 
 export const bookReducer = createReducer(
   initialBookState,
-  on(upsertBook, (state, action) => bookAdapter.upsertOne(action.book, state))
+  on(upsertBook, (state, action) => bookAdapter.upsertOne(action.book, state)),
+  on(addTagToBook, (state, action) => {
+    const book = state.entities[action.bookId] as Book;
+    book.tagIds.push(action.tagId);
+    return bookAdapter.upsertOne(book, state);
+  })
 );
 
 export const getBookState = createFeatureSelector<BookState>("book");
