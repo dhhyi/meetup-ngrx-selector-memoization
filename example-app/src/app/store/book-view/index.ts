@@ -1,6 +1,6 @@
 import { createSelector } from "@ngrx/store";
 import { once } from "lodash-es";
-import { fibonacciPerf } from "src/app/fibonacci/fibonacci";
+import { fibonacciPerf } from "../../fibonacci/fibonacci";
 import { Author } from "../author";
 import { getAuthorsOfBook, getBook, getTagsOfBook } from "../book";
 import { Book } from "../book/book.model";
