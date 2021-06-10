@@ -1,19 +1,8 @@
-const micromatch = require("micromatch");
-const prettier = require("prettier");
-
-const prettierSupportedExtensions = prettier
-  .getSupportInfo()
-  .languages.map(({ extensions }) => extensions)
-  .flat();
-
-const addQuotes = (a) => `"${a}"`;
-
 module.exports = (allStagedFiles) => {
-  const prettierFiles = micromatch(
-    allStagedFiles,
-    prettierSupportedExtensions.map((extension) => `**/*${extension}`)
-  );
-  return prettierFiles.length > 0
-    ? [`prettier --write ${prettierFiles.map(addQuotes).join(" ")}`]
-    : [];
+  const checks = [];
+  if (allStagedFiles.length > 0) {
+    checks.push("prettier --write .");
+  }
+  console.log("running", checks);
+  return checks;
 };
