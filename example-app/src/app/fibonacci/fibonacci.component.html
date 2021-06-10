@@ -1,8 +1,14 @@
 <div class="fibonacci">
-  <button (click)="increasing()">Start Increasing Timer</button>
-  <button (click)="decreasing()">Start Decreasing Timer</button>
-  <button (click)="clear()">Clear All</button>
-  <input type="number" [(ngModel)]="max" />
+  <button mat-raised-button (click)="increasing()">
+    Start Increasing Timer
+  </button>
+  <button mat-raised-button (click)="decreasing()">
+    Start Decreasing Timer
+  </button>
+  <button mat-raised-button (click)="clear()">Clear All</button>
+  <mat-form-field>
+    <input type="number" matInput placeholder="max" [(ngModel)]="max" />
+  </mat-form-field>
 
   <ng-container *ngFor="let l of log">
     <pre>{{ l.value }} {{ l.fib }} {{ l.duration | number: "1.0-0" }}ms</pre>

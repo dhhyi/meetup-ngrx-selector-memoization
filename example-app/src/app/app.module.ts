@@ -11,6 +11,7 @@ import { initData } from "./app.initializer";
 import { BooksComponent } from "./books/books.component";
 import { FibonacciComponent } from "./fibonacci/fibonacci.component";
 import { StateModule } from "./store/state.module";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [AppComponent, BooksComponent, FibonacciComponent],
@@ -20,6 +21,7 @@ import { StateModule } from "./store/state.module";
     NoopAnimationsModule,
     MatCardModule,
     MatButtonModule,
+    MatInputModule,
     AppRoutingModule,
     FormsModule,
   ],

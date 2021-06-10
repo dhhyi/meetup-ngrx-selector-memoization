@@ -11,6 +11,12 @@ import { fibonacciPerf, FibonacciReturnType } from "./fibonacci";
       .fibonacci {
         padding: 10px;
       }
+      .mat-raised-button {
+        margin-right: 5px;
+      }
+      .mat-form-field {
+        max-width: 50px;
+      }
     `,
   ],
 })
