@@ -102,9 +102,18 @@
           "options": {
             "browserTarget": "example-app:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
         }
       }
     }
   },
-  "defaultProject": "example-app"
+  "defaultProject": "example-app",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
