@@ -6,8 +6,6 @@ const prettierSupportedExtensions = prettier
   .languages.map(({ extensions }) => extensions)
   .flat();
 
-console.log(prettierSupportedExtensions);
-
 const addQuotes = (a) => `"${a}"`;
 
 module.exports = (allStagedFiles) => {

@@ -2,8 +2,8 @@
 
 ## Title ideas:
 
-- Having fun with NgRx Selector Memoization
-- Deep Dive into NgRx Selector Memoization
+- ~~Having fun with NgRx Selector Memoization~~
+- ~~Deep Dive into NgRx Selector Memoization~~
 - NgRx Selector Memoization and why you should do it!
 
 ## Abstract
@@ -39,11 +39,16 @@ Because of his original background in server-side development, he likes to dig d
 - anatomy of a selector
 
   - basically just a `map` function
-  -
+  - `createSelector`
+    - at least one input
+    - projector function
+  - selector with props
+    - deprecated
 
 - What is Memoization
 
   - basically a cache
+  - not explicit by key/hash but implicit by reference (default)
 
 - How does Memoization work with NgRx Selectors by default
   - check if input is identical (via provided function)
@@ -57,5 +62,11 @@ Because of his original background in server-side development, he likes to dig d
 
 - selectors (and OnPush change detection) require immutability
 
+  - example for mutable change + fix
+
 - projector creates new output that semantically doesn't change
+
   - "same" array returned on `filter`
+
+- why selector with props should be (and is) deprecated
+  - just one memoization for multiple parameters -> unusable if used for more then one parameter in same context
