@@ -1,5 +1,9 @@
 # Angular Portugal Meetup
 
+Slides: https://dhhyi.github.io/meetup-ngrx-selector-memoization
+
+Created using [remark](https://github.com/gnab/remark/wiki).
+
 ## Title ideas:
 
 - ~~Having fun with NgRx Selector Memoization~~
