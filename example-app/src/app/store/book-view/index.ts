@@ -1,5 +1,6 @@
 import { createSelector } from "@ngrx/store";
 import { once } from "lodash-es";
+import { fibonacciPerf } from "src/app/fibonacci/fibonacci";
 import { Author } from "../author";
 import { getAuthorsOfBook, getBook, getTagsOfBook } from "../book";
 import { Book } from "../book/book.model";
@@ -15,14 +16,15 @@ export interface BookView {
 }
 
 export const calculateNew = (book: Book) => {
-  // tslint:disable-next-line:no-console
-  console.log(
-    "calculating for",
-    book.title,
-    new Date(book.published).getFullYear()
+  const date = new Date(book.published).getFullYear();
+  const fromYear = [Math.trunc(date / 100), date % 100].reduce(
+    (acc, val) => acc + val
   );
+  const fib = fibonacciPerf(fromYear);
 
-  return new Date().getFullYear() - new Date(book.published).getFullYear() <= 1;
+  console.log("calculating for", book.title, date, fib.duration);
+
+  return !!fib?.fib && fib?.fib > 100_000_000;
 };
 
 export const getBookView = createSelector(
