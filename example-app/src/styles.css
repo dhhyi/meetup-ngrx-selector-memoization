@@ -45,3 +45,7 @@ p {
 .mat-card-footer {
   margin: 30px 0 0 0 !important;
 }
+
+.sections a {
+  padding: 10px;
+}
