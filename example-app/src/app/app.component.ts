@@ -14,7 +14,10 @@ import { tagDemoData, upsertTag } from "./store/tag";
 export class AppComponent implements OnInit {
   title = "ngrx-data-views";
 
-  books: { book$: Observable<BookView>; loading$: Observable<boolean> }[];
+  books!: {
+    book$: Observable<BookView | undefined>;
+    loading$: Observable<boolean>;
+  }[];
 
   constructor(private readonly store: Store<{}>) {}
 
@@ -34,20 +37,17 @@ export class AppComponent implements OnInit {
   }
 
   updateAuthor(authorId: string): void {
-    this.store.dispatch(
-      upsertAuthor({ author: authorDemoData.find((a) => a.id === authorId) })
-    );
+    const author = authorDemoData.find((a) => a.id === authorId);
+    if (author) this.store.dispatch(upsertAuthor({ author }));
   }
 
   updateBook(bookId: string): void {
-    this.store.dispatch(
-      upsertBook({ book: bookDemoData.find((a) => a.id === bookId) })
-    );
+    const book = bookDemoData.find((a) => a.id === bookId);
+    if (book) this.store.dispatch(upsertBook({ book }));
   }
 
   updateTag(tagId: string): void {
-    this.store.dispatch(
-      upsertTag({ tag: tagDemoData.find((a) => a.id === tagId) })
-    );
+    const tag = tagDemoData.find((a) => a.id === tagId);
+    if (tag) this.store.dispatch(upsertTag({ tag }));
   }
 }

@@ -30,7 +30,7 @@ export const getBookView = () =>
     getBook,
     getAuthorsOfBook(),
     getTagsOfBook(),
-    (book, authors, tags): BookView =>
+    (book, authors, tags): BookView | undefined =>
       book && {
         title: book.title,
         description: book.description,
