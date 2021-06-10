@@ -38,9 +38,8 @@ export const bookReducer = createReducer(
   initialBookState,
   on(upsertBook, (state, action) => bookAdapter.upsertOne(action.book, state)),
   on(addTagToBook, (state, action) => {
-    const book = state.entities[action.bookId] as Book;
-    book.tagIds.push(action.tagId);
-    return bookAdapter.upsertOne(book, state);
+    state.entities[action.bookId]?.tagIds.push(action.tagId);
+    return state;
   })
 );
 
