@@ -1,7 +1,7 @@
 import { memoize } from "lodash-es";
 
 const fibonacci = (val: number): number => {
-  console.log({ val });
+  // console.log({ val });
 
   if (val === 0 || val === 1) {
     return 1;
