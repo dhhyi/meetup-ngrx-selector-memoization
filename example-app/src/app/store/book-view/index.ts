@@ -25,18 +25,17 @@ export const calculateNew = (book: Book) => {
   return new Date().getFullYear() - new Date(book.published).getFullYear() <= 1;
 };
 
-export const getBookView = () =>
-  createSelector(
-    getBook,
-    getAuthorsOfBook(),
-    getTagsOfBook(),
-    (book, authors, tags): BookView | undefined =>
-      book && {
-        title: book.title,
-        description: book.description,
-        published: new Date(book.published),
-        isNew: once(() => calculateNew(book)),
-        authors,
-        tags,
-      }
-  );
+export const getBookView = createSelector(
+  getBook,
+  getAuthorsOfBook,
+  getTagsOfBook,
+  (book, authors, tags) =>
+    book && {
+      title: book.title,
+      description: book.description,
+      published: new Date(book.published),
+      isNew: once(() => calculateNew(book)),
+      authors,
+      tags,
+    }
+);

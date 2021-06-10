@@ -48,18 +48,22 @@ export const getBook = createSelector(
 export const checkEqual = (a: unknown[], b: unknown[]) =>
   a && b && a.length === b.length && a.every((val, idx) => val === b[idx]);
 
-export const getAuthorsOfBook = () =>
-  createSelectorFactory<object, Author[]>((projector) =>
-    defaultMemoize(projector, undefined, checkEqual)
-  )(getBook, getAuthorEntities, (book: Book, authors: Dictionary<Author>) =>
+export const getAuthorsOfBook = createSelector(
+  getBook,
+  getAuthorEntities,
+  (book, authors) =>
     book
-      ? book.authorIds.map((authorId) => authors[authorId]).filter((x) => !!x)
+      ? (book.authorIds
+          .map((authorId) => authors[authorId])
+          .filter((x) => !!x) as Author[])
       : []
-  );
+);
 
-export const getTagsOfBook = () =>
-  createSelectorFactory<object, Tag[]>((projector) =>
-    defaultMemoize(projector, undefined, checkEqual)
-  )(getBook, getTagEntities, (book: Book, tags: Dictionary<Tag>) =>
-    book ? book.tagIds.map((tagId) => tags[tagId]).filter((x) => !!x) : []
-  );
+export const getTagsOfBook = createSelector(
+  getBook,
+  getTagEntities,
+  (book, tags) =>
+    book
+      ? (book.tagIds.map((tagId) => tags[tagId]).filter((x) => !!x) as Tag[])
+      : []
+);

@@ -7,33 +7,39 @@ import { bookDemoData, upsertBook } from "./store/book";
 import { BookView, getBookView } from "./store/book-view";
 import { tagDemoData, upsertTag } from "./store/tag";
 
+interface BookViewWithLoading {
+  book$: Observable<BookView | undefined>;
+  loading$: Observable<boolean>;
+}
+
+function wrapLoading(
+  book$: Observable<BookView | undefined>
+): BookViewWithLoading {
+  return {
+    book$,
+    // display loading when book was updated
+    loading$: book$.pipe(
+      switchMap(() => merge(of(true), timer(2000).pipe(mapTo(false))))
+    ),
+  };
+}
+
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
 })
 export class AppComponent implements OnInit {
-  title = "ngrx-data-views";
+  title = "ngrx-selector-memoization";
 
-  books!: {
-    book$: Observable<BookView | undefined>;
-    loading$: Observable<boolean>;
-  }[];
+  books!: BookViewWithLoading[];
 
   constructor(private readonly store: Store<{}>) {}
 
   ngOnInit(): void {
-    this.books = bookDemoData.map((book) => {
-      // stream for book selected from store
-      const book$ = this.store.pipe(select(getBookView(), book.id));
-
-      return {
-        book$,
-        // display loading when book was updated
-        loading$: book$.pipe(
-          switchMap(() => merge(of(true), timer(2000).pipe(mapTo(false))))
-        ),
-      };
-    });
+    this.books = bookDemoData
+      .map((book) => book.id)
+      .map((id) => this.store.pipe(select(getBookView, id)))
+      .map(wrapLoading);
   }
 
   updateAuthor(authorId: string): void {
