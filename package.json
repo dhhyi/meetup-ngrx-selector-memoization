@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "talk": "http-server -c-1 talk",
+    "talk:watch": "cd talk && remarker serve"
   },
   "author": "Danilo Hoffmann",
   "license": "MIT",
@@ -13,8 +14,10 @@
     "url": "git+https://github.com/dhhyi/meetup-ngrx-selector-memoization.git"
   },
   "devDependencies": {
+    "http-server": "^0.12.3",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "remarker": "^1.12.1"
   }
 }
