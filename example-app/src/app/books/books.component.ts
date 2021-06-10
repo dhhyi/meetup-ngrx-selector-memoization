@@ -2,10 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { Store, select } from "@ngrx/store";
 import { Observable, merge, of, timer } from "rxjs";
 import { switchMap, mapTo } from "rxjs/operators";
-import { authorDemoData, upsertAuthor } from "../store/author";
-import { addTagToBook, Book, bookDemoData, upsertBook } from "../store/book";
+import { bookDemoData, getAuthor, getTag } from "../app.initializer";
+import { upsertAuthor } from "../store/author";
+import { addTagToBook, Book, upsertBook } from "../store/book";
 import { BookView, getBookView } from "../store/book-view";
-import { Tag, tagDemoData, upsertTag } from "../store/tag";
+import { Tag, upsertTag } from "../store/tag";
 
 interface BookViewWithLoading {
   book$: Observable<BookView | undefined>;
@@ -41,7 +42,7 @@ export class BooksComponent implements OnInit {
   }
 
   updateAuthor(authorId: string): void {
-    const author = authorDemoData.find((a) => a.id === authorId);
+    const author = getAuthor(authorId);
     if (author) this.store.dispatch(upsertAuthor({ author }));
   }
 
@@ -51,7 +52,7 @@ export class BooksComponent implements OnInit {
   }
 
   updateTag(tagId: string): void {
-    const tag = tagDemoData.find((a) => a.id === tagId);
+    const tag = getTag(tagId);
     if (tag) this.store.dispatch(upsertTag({ tag }));
   }
 
