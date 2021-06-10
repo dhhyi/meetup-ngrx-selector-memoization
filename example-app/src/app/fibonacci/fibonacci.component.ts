@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from "@angular/core";
 import { interval, Subject } from "rxjs";
 import { map, takeUntil, takeWhile } from "rxjs/operators";
-import { fibonacciPerf, FibonacciReturnType } from "../utils";
+import { fibonacciPerf, FibonacciReturnType } from "./fibonacci";
 
 @Component({
   selector: "app-fibonacci",
