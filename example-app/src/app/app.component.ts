@@ -5,6 +5,7 @@ import { Component } from "@angular/core";
   template: `
     <div class="sections">
       <a [routerLink]="['/fibonacci']">Fibonacci</a>
+      <a [routerLink]="['/introduction']">Introduction</a>
       <a [routerLink]="['/books']">Books</a>
       <a [routerLink]="['/']">Back</a>
     </div>

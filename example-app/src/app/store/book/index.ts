@@ -28,6 +28,11 @@ export const addTagToBook = createAction(
   props<{ bookId: string; tagId: string }>()
 );
 
+export const addTagToBookImmutable = createAction(
+  "[Book] Add Tag Immutable",
+  props<{ bookId: string; tagId: string }>()
+);
+
 export interface BookState extends EntityState<Book> {}
 
 const bookAdapter: EntityAdapter<Book> = createEntityAdapter<Book>();
@@ -40,6 +45,17 @@ export const bookReducer = createReducer(
   on(addTagToBook, (state, action) => {
     state.entities[action.bookId]?.tagIds.push(action.tagId);
     return state;
+  }),
+  on(addTagToBookImmutable, (state, action) => {
+    const currentBook = state.entities[action.bookId] as Book;
+    const newState = bookAdapter.updateOne(
+      {
+        id: action.bookId,
+        changes: { tagIds: [...currentBook.tagIds, action.tagId] },
+      },
+      state
+    );
+    return newState;
   })
 );
 

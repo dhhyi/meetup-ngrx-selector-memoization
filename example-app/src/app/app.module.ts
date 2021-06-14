@@ -12,9 +12,15 @@ import { BooksComponent } from "./books/books.component";
 import { FibonacciComponent } from "./fibonacci/fibonacci.component";
 import { StateModule } from "./store/state.module";
 import { MatInputModule } from "@angular/material/input";
+import { IntroductionComponent } from "./introduction/introduction/introduction.component";
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent, FibonacciComponent],
+  declarations: [
+    AppComponent,
+    BooksComponent,
+    FibonacciComponent,
+    IntroductionComponent,
+  ],
   imports: [
     BrowserModule,
     StateModule,
