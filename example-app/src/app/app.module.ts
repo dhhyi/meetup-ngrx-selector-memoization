@@ -12,7 +12,7 @@ import { BooksComponent } from "./books/books.component";
 import { FibonacciComponent } from "./fibonacci/fibonacci.component";
 import { StateModule } from "./store/state.module";
 import { MatInputModule } from "@angular/material/input";
-import { IntroductionComponent } from "./introduction/introduction/introduction.component";
+import { IntroductionComponent } from "./introduction/introduction.component";
 
 @NgModule({
   declarations: [

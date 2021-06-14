@@ -2,9 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { scan } from "rxjs/operators";
-import { bookDemoData } from "src/app/app.initializer";
-import { Book, addTagToBookImmutable } from "src/app/store/book";
-import { Tag, upsertTag } from "src/app/store/tag";
+import { bookDemoData } from "../app.initializer";
+import { Book, addTagToBookImmutable } from "../store/book";
+import { Tag, upsertTag } from "../store/tag";
 
 @Component({
   template: `
