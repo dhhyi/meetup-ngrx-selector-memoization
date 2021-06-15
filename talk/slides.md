@@ -22,7 +22,11 @@ class: big
 
 # Agenda
 
-1. Placeholder
+1. What is Memoization?
+
+2. Selectors in NgRx
+
+3. Anatomy of Selectors.
 
 ---
 
@@ -47,6 +51,21 @@ class: large
 - Java/C++ Background ~8y
 
 - Angular since 4y, currently @ .company-icon[![Evident](https://www.evident.nl/hubfs/evident/logos/Evident-clean-logo.svg)]
+
+---
+
+# What is Memoization?
+
+> In computing, memoization [...] is an optimization technique used primarily to speed up computer programs by **storing the results** of expensive function calls and **returning the cached** result when the **same inputs** occur again.
+> [[Wikipedia]](https://en.wikipedia.org/wiki/Memoization)
+
+---
+
+class: big, center, middle
+
+# Live Demo
+
+[fibonacci @ .icon[![StackBlitz](https://developer.stackblitz.com/img/logo.svg)]](https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app?file=src%2Fapp%2Ffibonacci%2Ffibonacci.ts)
 
 ---
 

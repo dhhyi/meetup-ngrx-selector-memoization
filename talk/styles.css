@@ -147,6 +147,8 @@ blockquote p {
   font-style: italic;
   position: relative;
   left: 50px;
+  font-size: xx-large;
+  line-height: 1.6;
 }
 blockquote:before {
   display: block;
