@@ -25,7 +25,7 @@ export const calculateNew = (book: Book) => {
     "calculating for",
     book.title,
     date,
-    (fib.duration as number)?.toFixed(0) + "ms"
+    fib.duration?.toFixed(0) + "ms"
   );
 
   return !!fib?.fib && fib?.fib > 100_000_000;

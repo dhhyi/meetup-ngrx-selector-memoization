@@ -13,7 +13,7 @@ const fibonacci = (val: number): number => {
 export interface FibonacciReturnType {
   value: number;
   fib?: number;
-  duration: number | "aborted";
+  duration: number;
 }
 
 export function fibonacciPerf(value: number): FibonacciReturnType {
