@@ -1,17 +1,19 @@
 <div class="book-list">
   <p>
     Update Book:
-    <button mat-button (click)="updateBook('2')">Angular 8</button>
+    <button mat-button (click)="updateBook('1')">Predictably Irrational</button>
+    <button mat-button (click)="updateBook('2')">Angular</button>
     <button mat-button (click)="updateBook('3')">Just for Fun</button>
   </p>
   <p>
     Update Author:
+    <button mat-button (click)="updateAuthor('DA')">Dan Ariely</button>
     <button mat-button (click)="updateAuthor('FM')">Ferdinand Malcher</button>
     <button mat-button (click)="updateAuthor('LT')">Linus Torvalds</button>
   </p>
   <p>
     Update Tag:
-    <button mat-button (click)="updateTag('ng8')">Angular 8</button>
+    <button mat-button (click)="updateTag('ng')">Angular</button>
     <button mat-button (click)="updateTag('se')">Software Engineering</button>
     <button mat-button (click)="updateTag('ph')">Philosophy</button>
     <button mat-raised-button (click)="addRandomTagToBook()">
