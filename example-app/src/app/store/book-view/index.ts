@@ -1,5 +1,4 @@
 import { createSelector } from "@ngrx/store";
-import { once } from "lodash-es";
 import { fibonacciPerf } from "../../fibonacci/fibonacci";
 import { Author } from "../author";
 import { getAuthorsOfBook, getBook, getTagsOfBook } from "../book";
@@ -12,7 +11,7 @@ export interface BookView {
   authors: Author[];
   tags: Tag[];
   published: Date;
-  isNew(): boolean;
+  isNew?: boolean;
 }
 
 export const calculateNew = (book: Book) => {
@@ -22,7 +21,12 @@ export const calculateNew = (book: Book) => {
   );
   const fib = fibonacciPerf(fromYear);
 
-  console.log("calculating for", book.title, date, fib.duration);
+  console.log(
+    "calculating for",
+    book.title,
+    date,
+    (fib.duration as number)?.toFixed(0) + "ms"
+  );
 
   return !!fib?.fib && fib?.fib > 100_000_000;
 };
@@ -31,12 +35,12 @@ export const getBookView = createSelector(
   getBook,
   getAuthorsOfBook,
   getTagsOfBook,
-  (book, authors, tags) =>
+  (book, authors, tags): BookView | undefined =>
     book && {
       title: book.title,
       description: book.description,
       published: new Date(book.published),
-      isNew: once(() => calculateNew(book)),
+      // isNew: calculateNew(book),
       authors,
       tags,
     }
