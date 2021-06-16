@@ -14,7 +14,9 @@ export interface BookView {
   isNew?: boolean;
 }
 
-export const calculateNew = (book: Book) => {
+export const calculateNew = (book: Book | undefined) => {
+  if (!book) return false;
+
   const date = new Date(book.published).getFullYear();
   const fromYear = [Math.trunc(date / 100), date % 100].reduce(
     (acc, val) => acc + val

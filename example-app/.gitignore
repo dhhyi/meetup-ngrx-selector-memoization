@@ -28,6 +28,7 @@ chrome-profiler-events*.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/cheat*
 .history/*
 
 # misc
