@@ -3,6 +3,7 @@ import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { scan } from "rxjs/operators";
 import { bookDemoData } from "../app.initializer";
+import { AppState } from "../store/app.reducer";
 import { Book, addTagToBookImmutable } from "../store/book";
 import { Tag, upsertTag } from "../store/tag";
 
@@ -22,7 +23,7 @@ export class IntroductionComponent implements OnInit {
   obs$!: Observable<unknown>;
   updates$!: Observable<number>;
 
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.obs$ = this.store;
