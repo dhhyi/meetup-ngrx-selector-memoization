@@ -13,9 +13,10 @@ import { Tag, upsertTag } from "../store/tag";
       Add Random Tag to Book
     </button>
 
-    <pre>{{ obs$ | async | json }}</pre>
+    <div style="height: 80%; overflow: scroll;">
+      <pre>{{ obs$ | async | json }}</pre>
+    </div>
   `,
-  styles: [],
 })
 export class IntroductionComponent implements OnInit {
   obs$!: Observable<unknown>;
