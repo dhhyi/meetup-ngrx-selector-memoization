@@ -1,12 +1,14 @@
 body {
-  font-family: "Droid Serif";
+  font-family: "Poppins";
+  color: white;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Yanone Kaffeesatz";
-  font-weight: normal;
+  font-family: "Poppins";
+  font-weight: bold;
+  color: #f48154;
 }
 
 .remark-code,
@@ -20,18 +22,7 @@ h3 {
 }
 
 .remark-slide-content {
-  background: rgb(129, 129, 129);
-  background: linear-gradient(
-    130deg,
-    rgba(129, 129, 129, 1) 0%,
-    rgba(214, 214, 223, 1) 13%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-.white {
-  background-color: white !important;
-  background: unset;
+  background-color: #1e1f25;
 }
 
 .big p,
@@ -59,6 +50,11 @@ h3 {
   float: right;
 }
 
+.meetup-logo {
+  background-color: white;
+  border-radius: 10px;
+}
+
 .meetup-logo img {
   width: 10%;
   display: inline;
@@ -71,6 +67,7 @@ h3 {
 .meetup-logo h2 {
   display: inline;
   vertical-align: middle;
+  color: black;
 }
 
 .icon img {
@@ -80,7 +77,6 @@ h3 {
 .company-icon img {
   height: 1.2em;
   vertical-align: bottom;
-  background-color: black;
   padding: 2px;
 }
 h2 .icon img {
@@ -90,13 +86,13 @@ h2 .icon img {
 
 a,
 a:visited {
-  color: blue;
+  color: white;
   text-decoration: none;
 }
 
 .icon a,
 .icon a:visited {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -160,4 +156,14 @@ blockquote:before {
   line-height: 0.1em;
   margin-right: 0.25em;
   vertical-align: -0.4em;
+}
+
+.demo-link {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.demo-link a {
+  color: black !important;
 }

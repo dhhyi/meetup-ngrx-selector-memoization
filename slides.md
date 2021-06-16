@@ -65,7 +65,7 @@ class: big, center, middle
 
 # Live Demo
 
-[fibonacci @ .icon[![StackBlitz](https://developer.stackblitz.com/img/logo.svg)]](https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app?file=src%2Fapp%2Ffibonacci%2Ffibonacci.ts)
+.demo-link[[fibonacci @ .icon[![StackBlitz](https://developer.stackblitz.com/img/logo.svg)]](https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app?file=src%2Fapp%2Ffibonacci%2Ffibonacci.ts)]
 
 ---
 
