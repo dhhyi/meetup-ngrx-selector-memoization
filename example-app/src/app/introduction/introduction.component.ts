@@ -14,7 +14,7 @@ import { Tag, upsertTag } from "../store/tag";
       Add Random Tag to Book
     </button>
 
-    <div style="height: 80%; overflow: scroll;">
+    <div style="height: 88%; overflow: scroll;">
       <pre>{{ obs$ | async | json }}</pre>
     </div>
   `,
