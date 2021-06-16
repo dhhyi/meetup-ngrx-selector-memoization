@@ -352,7 +352,37 @@ class: big, center, middle
 
 # Live Demo
 
-.demo-link[[fibonacci @ .icon[![StackBlitz](https://developer.stackblitz.com/img/logo.svg)]](https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app?file=src%2Fapp%2Ffibonacci%2Ffibonacci.ts)]
+<a class="white-box" target="_blank" href="https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app?file=src%2Fapp%2Ffibonacci%2Ffibonacci.ts">fibonacci @ <span class="icon"><img src="https://developer.stackblitz.com/img/logo.svg" alt="StackBlitz"></span></a>
+
+---
+
+<!-- # NgRx Selectors -->
+
+.white-box[
+<img style="height: 550px;" src="https://ngrx.io/generated/images/guide/store/state-management-lifecycle.png"/>
+]
+
+---
+
+class: big
+
+# Tasks of NgRx Selectors
+
+- select slice of data from Store object
+
+- enrich and prepare data
+
+- reusable artifacts
+
+- prevent view updates by <ins>memoization</ins>
+
+---
+
+class: big, center, middle
+
+# Live Demo
+
+<a class="white-box" target="_blank" href="https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app?file=src%2Fapp%2Fintroduction%2Fintroduction.component.ts">introduction @ <span class="icon"><img src="https://developer.stackblitz.com/img/logo.svg" alt="StackBlitz"></span></a>
 
 ---
 
