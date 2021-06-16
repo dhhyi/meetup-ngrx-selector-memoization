@@ -158,12 +158,10 @@ blockquote:before {
   vertical-align: -0.4em;
 }
 
-.demo-link {
+.white-box {
   background-color: white;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
-}
-
-.demo-link a {
+  text-align: center;
   color: black !important;
 }
