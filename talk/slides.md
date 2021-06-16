@@ -364,6 +364,20 @@ class: big, center, middle
 
 ---
 
+class: big
+
+# Tasks of NgRx Selectors
+
+- select slice of data from Store object
+
+- enrich and prepare data
+
+- reusable artifacts
+
+- prevent view updates by <ins>memoization</ins>
+
+---
+
 class: big, center, middle
 
 # Live Demo
