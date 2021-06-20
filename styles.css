@@ -27,7 +27,7 @@ h3 {
 
 .big p,
 .big li,
-.big remark-inline-code {
+.big .remark-inline-code {
   font-size: xx-large;
 }
 
