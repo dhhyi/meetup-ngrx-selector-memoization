@@ -1,0 +1,35 @@
+name: Update example-app-fixed Branch
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "example-app/**"
+      - ".github/workflows/example-app.yml"
+      - ".github/workflows/example-app-fixed.yml"
+      - "example-app-fixes.diff"
+
+jobs:
+  deploy:
+    name: Update example-app-fixed Branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Build
+        run: |
+          cd example-app
+          git apply example-app-fixes.diff
+          npm i
+          npm run build
+          git clean -xdf
+
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: example-app-fixed
+          FOLDER: example-app-fixed
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+          SQUASH_HISTORY: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
