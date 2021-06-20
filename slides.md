@@ -412,6 +412,14 @@ class: big
 
 ---
 
+class: big, center, middle
+
+# Live Demo
+
+<a class="white-box" target="_blank" href="https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app?file=src%2Fapp%2Fstore%2Fbook-view%2Findex.ts">example-app @ <span class="icon"><img src="https://developer.stackblitz.com/img/logo.svg" alt="StackBlitz"></span></a>
+
+---
+
 class: middle, center
 
 # Thank You!
