@@ -4,6 +4,8 @@ Slides: https://dhhyi.github.io/meetup-ngrx-selector-memoization
 
 Example App: https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app
 
+Example App (fixed): https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app-fixed
+
 Created using [remark](https://github.com/gnab/remark/wiki).
 
 ## Title ideas:

@@ -18,8 +18,8 @@ jobs:
 
       - name: Build
         run: |
-          cd example-app
           git apply example-app-fixes.diff
+          cd example-app
           npm i
           npm run build
           git clean -xdf
