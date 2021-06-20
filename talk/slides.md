@@ -386,6 +386,32 @@ class: big, center, middle
 
 ---
 
+class: big
+
+# Anatomy of a Selector
+
+- <a target="_blank" href="https://github.com/ngrx/platform/blob/12.1.0/modules/store/src/selector.ts#L560-L565"><code class="remark-inline-code">createSelector</code></a>
+
+- at least one **input**
+
+- exactly one **projector**
+
+---
+
+class: big
+
+# Anatomy of a Selector #2
+
+- `createSelector` --- <a target="_blank" href="https://github.com/ngrx/platform/blob/b3e2b103582f0e6e533f25091614a7ea02409e0c/modules/store/src/selector.ts#L691"><code class="remark-inline-code">createSelectorFactory(defaultMemoize)</code></a>
+
+- `function createSelectorFactory(memoize: MemoizeFn)` --> <a target="_blank" href="https://ngrx.io/api/store/createSelectorFactory">doc</a>
+
+- `type MemoizeFn = (t: AnyFn) => MemoizedProjection` --> <a target="_blank" href="https://ngrx.io/api/store/MemoizedProjection">doc</a>
+
+- <a target="_blank" href="https://ngrx.io/api/store/defaultMemoize"><code class="remark-inline-code">defaultMemoize</code></a>
+
+---
+
 class: middle, center
 
 # Thank You!
