@@ -1,4 +1,4 @@
-# Angular Portugal Meetup
+# Angular Portugal Meetup - NgRx Selector Memoization and why you should do it!
 
 Slides: https://dhhyi.github.io/meetup-ngrx-selector-memoization
 
@@ -7,12 +7,6 @@ Example App: https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoizatio
 Example App (fixed): https://stackblitz.com/github/dhhyi/meetup-ngrx-selector-memoization/tree/example-app-fixed
 
 Created using [remark](https://github.com/gnab/remark/wiki).
-
-## Title ideas:
-
-- ~~Having fun with NgRx Selector Memoization~~
-- ~~Deep Dive into NgRx Selector Memoization~~
-- NgRx Selector Memoization and why you should do it!
 
 ## Abstract
 
@@ -32,49 +26,4 @@ Because of his original background in server-side development, he likes to dig d
 
 - https://angular.schule/blog/2020-01-ngrx-data-views
 - https://dev.to/zackderose/ngrx-fun-with-createselectorfactory-hng
-
-## Outline
-
-### Fundamentals
-
-- Tasks of selectors in an application
-
-  - prepare data from store for view
-  - adapt format
-  - trigger changes when data changes
-    -> OnPush change detection
-
-- anatomy of a selector
-
-  - basically just a `map` function
-  - `createSelector`
-    - at least one input
-    - projector function
-  - selector with props
-    - deprecated
-
-- What is Memoization
-
-  - basically a cache
-  - not explicit by key/hash but implicit by reference (default)
-
-- How does Memoization work with NgRx Selectors by default
-  - check if input is identical (via provided function)
-    - return cache if it is
-  - calculate projector output
-  - new value: compare with cache (via provided function)
-    - return new if differs
-    - return cache if same
-
-### Problems
-
-- selectors (and OnPush change detection) require immutability
-
-  - example for mutable change + fix
-
-- projector creates new output that semantically doesn't change
-
-  - "same" array returned on `filter`
-
-- why selector with props should be (and is) deprecated
-  - just one memoization for multiple parameters -> unusable if used for more then one parameter in same context
+- https://scotch.io/tutorials/understanding-memoization-in-javascript
