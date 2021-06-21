@@ -1,4 +1,8 @@
-# Angular Portugal Meetup - NgRx Selector Memoization and why you should do it!
+# Angular Portugal Meetup
+
+# NgRx Selector Memoization and why you should do it!
+
+Meetup: https://www.meetup.com/Angular-Portugal/events/278787325/
 
 Slides: https://dhhyi.github.io/meetup-ngrx-selector-memoization
 
