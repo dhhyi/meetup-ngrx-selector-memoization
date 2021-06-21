@@ -5,9 +5,8 @@ import { getAuthorsOfBook, getBook, getTagsOfBook } from "../book";
 import { Book } from "../book/book.model";
 import { Tag } from "../tag";
 
-export interface BookView {
-  title: string;
-  description: string;
+export interface BookView
+  extends Omit<Book, "id" | "authorIds" | "tagIds" | "published"> {
   authors: Author[];
   tags: Tag[];
   published: Date;
