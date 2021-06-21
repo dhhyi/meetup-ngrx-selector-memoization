@@ -448,6 +448,24 @@ class: big, center, middle
 
 ---
 
+# Resources
+
+- [NgRx Data Views: How to de-normalize entities for large enterprise applications](https://angular.schule/blog/2020-01-ngrx-data-views)
+- [NgRx: Fun With `createSelectorFactory()`](https://dev.to/zackderose/ngrx-fun-with-createselectorfactory-hng)
+- [Understanding Memoization In JavaScript](https://scotch.io/tutorials/understanding-memoization-in-javascript)
+
+### Documentation
+
+- [ngrx/platform: `modules/store/src/selector.ts`](https://github.com/ngrx/platform/blob/12.1.0/modules/store/src/selector.ts)
+- [RFC: Deprecate Selectors With Props](https://github.com/ngrx/platform/issues/2980)
+
+### Libraries
+
+- [`lodash/memoize`](https://lodash.com/docs/4.17.15#memoize)
+- [`immer`](https://immerjs.github.io/immer/) via [`ngrx-immer`](https://github.com/timdeschryver/ngrx-immer)
+
+---
+
 class: middle, center
 
 # Thank You!
