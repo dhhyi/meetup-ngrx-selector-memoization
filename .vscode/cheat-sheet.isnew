@@ -1,0 +1,24 @@
+const cache: Record<string, boolean> = {}
+
+const isNewMemoizedProjection: MemoizedProjection = {
+  memoized: (book: Book | undefined) => {
+    const id = book?.id
+    if (!book || !id) {
+      return undefined;
+    }
+    if (cache[id] === undefined) {
+      cache[id] = calculateNew(book)
+    }
+    return cache[id];
+  },
+
+  clearResult: noop,
+  reset: noop,
+  setResult: noop
+}
+
+
+const isNew = (bookId: string) => createSelectorFactory<object, boolean>(() => isNewMemoizedProjection)(
+  getBook(bookId),
+  noop
+)

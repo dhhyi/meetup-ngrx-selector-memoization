@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.book-list {
+  margin: 10px 10px 10px 10px;
+}
+
+.book-card {
+  padding: 10px 10px 10px 10px;
+}
+
+.new-book {
+  font-weight: bold;
+  color: red;
+}
+
+.left {
+  padding-right: 10px;
+}
+
+.right {
+  padding-left: 10px;
+}
+
+.mat-card {
+  background-color: whitesmoke;
+}
+
+.loading {
+  background-color: cyan;
+}
+
+.mat-card-footer {
+  margin: 30px 0 0 0 !important;
+}
+
+.sections a {
+  padding: 10px;
+}
