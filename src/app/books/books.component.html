@@ -1,0 +1,51 @@
+<div class="book-list">
+  <p>
+    Update Book:
+    <button mat-button (click)="updateBook('1')">Predictably Irrational</button>
+    <button mat-button (click)="updateBook('2')">Angular</button>
+    <button mat-button (click)="updateBook('3')">Just for Fun</button>
+  </p>
+  <p>
+    Update Author:
+    <button mat-button (click)="updateAuthor('DA')">Dan Ariely</button>
+    <button mat-button (click)="updateAuthor('FM')">Ferdinand Malcher</button>
+    <button mat-button (click)="updateAuthor('LT')">Linus Torvalds</button>
+  </p>
+  <p>
+    Update Tag:
+    <button mat-button (click)="updateTag('ng')">Angular</button>
+    <button mat-button (click)="updateTag('se')">Software Engineering</button>
+    <button mat-button (click)="updateTag('ph')">Philosophy</button>
+    <button mat-raised-button (click)="addRandomTagToBook()">
+      Add Random Tag to Book
+    </button>
+  </p>
+
+  <div *ngFor="let bookStream of books" class="book-card">
+    <mat-card
+      *ngIf="bookStream.book$ | async as book"
+      [ngClass]="{ loading: bookStream.loading$ | async }"
+    >
+      <mat-card-header>
+        <mat-card-title
+          ><span *ngIf="book.isNew" class="new-book left">NEW</span
+          >{{ book.title
+          }}<span *ngIf="book.isNew" class="new-book right"
+            >NEW</span
+          ></mat-card-title
+        >
+        <mat-card-subtitle>
+          <span *ngFor="let author of book.authors; let l = last"
+            >{{ author.lastName }}{{ l ? "" : ", " }}</span
+          >
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>{{ book.description }}</mat-card-content>
+      <mat-card-footer>
+        <span *ngFor="let tag of book.tags; let l = last"
+          >{{ tag.name }}{{ l ? "" : ", " }}</span
+        ><span> - {{ book.published | date }}</span>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
