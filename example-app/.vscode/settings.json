@@ -3,5 +3,6 @@
   "editor.lineHeight": 0,
   "editor.fontWeight": "normal",
   "editor.fontFamily": "monospace",
-  "editor.lineNumbers": "off"
+  "editor.lineNumbers": "off",
+  "editor.formatOnSave": false
 }
